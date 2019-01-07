@@ -6,7 +6,7 @@
 /*   By: elindao- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 17:23:03 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/07 17:12:13 by lgrudler         ###   ########.fr       */
+/*   Updated: 2019/01/07 17:47:17 by lgrudler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 #include	<stdio.h>
 
 int		good_pattern(char *str);
+int		check_newline(char *str);
 
 #endif
