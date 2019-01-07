@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/02 17:23:03 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/07 19:43:31 by elindao-         ###   ########.fr       */
+/*   Created: 2019/01/07 19:44:40 by elindao-          #+#    #+#             */
+/*   Updated: 2019/01/07 19:44:55 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
+#include "fillit.h"
 
-# define BUFF_SIZE 600
-#include "libft/libft.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include	<stdio.h>
+int		main(int ac, char **av)
+{
+	int		fd;
+	char	str[548];
+	int		ret;
 
-int		check_pattern(char *str);
-int		check_newline(char *str);
-int		check_contact(char *str);
-int		check_file(char *str);
+	fd = open(av[1], O_RDONLY);
+	ret = read(fd, str, 548);
+	str[ret] = '\0';
+	if (good_pattern(str) == 0)
+		printf("%s\n", "pb");
+	if (check_newline(str) == 0)
+		printf("%s\n", "pbs");
+	else
+		printf("%s\n", "OKAYYYY");
+	return (0);
+}
 
-#endif
