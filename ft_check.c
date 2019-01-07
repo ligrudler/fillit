@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 16:13:49 by lgrudler          #+#    #+#             */
-/*   Updated: 2019/01/07 19:42:54 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/07 20:37:12 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,17 @@ int		check_contact(char *str)
 
 	i = 0;
 	contact = 0;
-
-	while (str[i] && i < 20) // Pas besoin de checker le 21e caractère (str[20] = car c'est un '\n')}
+	while (str[i] && i < 21)
 	{
-		if (str[i + 1] && str[i + 1] == '#' && i < 18)
+		if (str[i] == '#' && str[i + 1] == '#' && i < 18)
+		contact++;
+		if (str[i] == '#' && str[i + 5] == '#' && i < 14)
 			contact++;
-		if (str[i + 5] && str[i + 5] == '#' && i < 14)
+		if (str[i] == '#' && str[i - 1] == '#' && i > 0)
 			contact++;
-		if (str[i - 1] && str[i - 1] == '#' && i > 0)
+		if (str[i] == '#' && str[i - 5] == '#' && i > 4)
 			contact++;
-		if (str[i - 5] && str[i - 5] == '#' && i > 4)
-			contact++;
+		i++;
 	}
 	if (contact == 6 || contact == 8)
 			return (1);
@@ -78,9 +78,10 @@ int		check_file(char *str)
 
 	i = 0;
 	len = ft_strlen(str);
+	printf("len = %d\n", len);
 	while(i < len)
 	{
-		if (!check_pattern(str + i) || !check_newline(str + i) || !check_contact(str + i))
+		if (!check_pattern(str + i) || !check_contact(str + i) || !check_newline(str + i))
 			return (0);
 	i = i + 21;
 	}
