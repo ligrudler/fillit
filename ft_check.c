@@ -6,24 +6,24 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 16:13:49 by lgrudler          #+#    #+#             */
-/*   Updated: 2019/01/07 20:37:12 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/07 20:52:20 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		check_pattern(char *str)
+int check_pattern(char *str)
 {
-	int		i;
-	int		dot;
-	int		hashtag;
-	int		line;
+	int i;
+	int dot;
+	int hashtag;
+	int line;
 
 	i = 0;
 	dot = 0;
 	hashtag = 0;
 	line = 0;
-	while(str[i] && i < 21)
+	while (str[i] && i < 21)
 	{
 		if (str[i] != '.' && str[i] != '#' && str[i] != '\n')
 			return (0);
@@ -40,50 +40,53 @@ int		check_pattern(char *str)
 	return (0);
 }
 
-int		check_newline(char *str) // On pourra fusionner cette fonction avec la précédente pour en faire une super fonction qui fait tout :-D ! (-25 lignes à voir, pour gagner des lignes, on aura pas besoin de compter les points)
+int check_newline(char *str) // On pourra fusionner cette fonction avec la précédente pour en faire une super fonction qui fait tout :-D ! (-25 lignes à voir, pour gagner des lignes, on aura pas besoin de compter les points)
 {
 	if (str[4] == '\n' && str[9] == '\n' && str[14] == '\n' && str[19] == '\n' && (str[20] == '\n' || str[20] == '\0'))
 		return (1);
 	return (0);
 }
 
-int		check_contact(char *str)
+int check_contact(char *str)
 {
-	int		i;
-	int		contact;
+	int i;
+	int contact;
 
 	i = 0;
 	contact = 0;
 	while (str[i] && i < 21)
 	{
-		if (str[i] == '#' && str[i + 1] == '#' && i < 18)
-		contact++;
-		if (str[i] == '#' && str[i + 5] == '#' && i < 14)
-			contact++;
-		if (str[i] == '#' && str[i - 1] == '#' && i > 0)
-			contact++;
-		if (str[i] == '#' && str[i - 5] == '#' && i > 4)
-			contact++;
+		if (str[i] == '#')
+		{
+			if (str[i + 1] && str[i + 1] == '#' && i < 18)
+				contact++;
+			if (str[i + 5] && str[i + 5] == '#' && i < 14)
+				contact++;
+			if (str[i - 1] && str[i - 1] == '#' && i > 0)
+				contact++;
+			if (str[i - 5] && str[i - 5] == '#' && i > 4)
+				contact++;
+		}
 		i++;
 	}
 	if (contact == 6 || contact == 8)
-			return (1);
+		return (1);
 	return (0);
 }
 
-int		check_file(char *str)
+int check_file(char *str)
 {
-	int		i;
-	int		len;
+	int i;
+	int len;
 
 	i = 0;
 	len = ft_strlen(str);
 	printf("len = %d\n", len);
-	while(i < len)
+	while (i < len)
 	{
 		if (!check_pattern(str + i) || !check_contact(str + i) || !check_newline(str + i))
 			return (0);
-	i = i + 21;
+		i = i + 21;
 	}
 	return (1);
 }

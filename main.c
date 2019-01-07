@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 19:44:40 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/07 20:41:05 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/07 20:57:12 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ int		main(int ac, char **av)
 	int		fd;
 	char	str[548];
 	int		ret;
+
+	if (ac != 2)
+	{
+		ft_putendl("Usage: .fillit mon_fichierchier");
+		return (0);
+	}
 
 	fd = open(av[1], O_RDONLY);
 	ret = read(fd, str, 548);
