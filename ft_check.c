@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 16:13:49 by lgrudler          #+#    #+#             */
-/*   Updated: 2019/01/07 20:52:20 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/07 21:08:22 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,23 @@ int check_file(char *str)
 
 	i = 0;
 	len = ft_strlen(str);
-	printf("len = %d\n", len);
 	while (i < len)
 	{
-		if (!check_pattern(str + i) || !check_contact(str + i) || !check_newline(str + i))
+		if (!check_pattern(str + i))
+		{
+			ft_putendl("Erreur à check_pattern");
 			return (0);
+		}
+		if (!check_contact(str + i))
+		{
+			ft_putendl("Erreur à check_contact");
+			return (0);
+		}
+		if (!check_newline(str + i))
+		{
+			ft_putendl("Erreur à check_newline");
+			return (0);
+		}
 		i = i + 21;
 	}
 	return (1);
