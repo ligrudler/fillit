@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 16:13:49 by lgrudler          #+#    #+#             */
-/*   Updated: 2019/01/07 16:47:00 by lgrudler         ###   ########.fr       */
+/*   Updated: 2019/01/07 17:19:34 by lgrudler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,12 @@ int		good_pattern(char *str)
 		if (str[i] == '#')
 			hashtag++;
 		i++;
-
 	}
+	printf("%d\n", hashtag);
+	printf("%d\n", dot);
 	if (hashtag == 4 && dot == 12)
 		return (1);
 	return (0);
 }
+
+

@@ -6,7 +6,7 @@
 /*   By: elindao- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 17:23:03 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/02 17:45:30 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/07 17:12:13 by lgrudler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,9 @@
 #include "libft/libft.h"
 #include <unistd.h>
 #include <stdlib.h>
+#include <fcntl.h>
+#include	<stdio.h>
+
+int		good_pattern(char *str);
 
 #endif
