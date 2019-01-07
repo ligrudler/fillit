@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 16:13:49 by lgrudler          #+#    #+#             */
-/*   Updated: 2019/01/07 16:29:13 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/07 16:47:00 by lgrudler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,13 @@ int		good_pattern(char *str)
 	while(str[i] && i < 21)
 	{
 		if (str[i] != '.' && str[i] != '#' && str[i] != '\n')
-		return (0);
+			return (0);
 		if (str[i] == '.')
-		dot++;
+			dot++;
 		if (str[i] == '#')
-		hashtag++;
+			hashtag++;
 		i++;
+
 	}
 	if (hashtag == 4 && dot == 12)
 		return (1);
