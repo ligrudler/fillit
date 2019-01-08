@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 16:13:49 by lgrudler          #+#    #+#             */
-/*   Updated: 2019/01/08 15:56:16 by lgrudler         ###   ########.fr       */
+/*   Updated: 2019/01/08 17:47:32 by lgrudler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int check_pattern(char *str)
 
 int check_newline(char *str)
 {
-	if (str[4] == '\n' && str[9] == '\n' && str[14] == '\n' && str[19] == '\n' && (str[20] == '\n' || str[20] == '\0'))
+	if (str[4] == '\n' && str[9] == '\n' && str[14] == '\n' && str[19] == '\n' && ((str[20] == '\n' && str[21] != '\0') || str[20] == '\0'))
 		return (1);
 	return (0);
 }
