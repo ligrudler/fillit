@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 19:44:40 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/07 20:57:12 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/08 14:58:12 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		ft_putendl("Usage: .fillit mon_fichierchier");
+		ft_putendl("Usage: .fillit mon_fichier");
 		return (0);
 	}
 

@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 16:13:49 by lgrudler          #+#    #+#             */
-/*   Updated: 2019/01/07 21:08:22 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/08 14:58:14 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int check_pattern(char *str)
 	return (0);
 }
 
-int check_newline(char *str) // On pourra fusionner cette fonction avec la précédente pour en faire une super fonction qui fait tout :-D ! (-25 lignes à voir, pour gagner des lignes, on aura pas besoin de compter les points)
+int check_newline(char *str)
 {
 	if (str[4] == '\n' && str[9] == '\n' && str[14] == '\n' && str[19] == '\n' && (str[20] == '\n' || str[20] == '\0'))
 		return (1);
@@ -85,17 +85,17 @@ int check_file(char *str)
 	{
 		if (!check_pattern(str + i))
 		{
-			ft_putendl("Erreur à check_pattern");
+			ft_putendl("Erreur à check_pattern"); // pour debug
 			return (0);
 		}
 		if (!check_contact(str + i))
 		{
-			ft_putendl("Erreur à check_contact");
+			ft_putendl("Erreur à check_contact"); // pour debug
 			return (0);
 		}
 		if (!check_newline(str + i))
 		{
-			ft_putendl("Erreur à check_newline");
+			ft_putendl("Erreur à check_newline"); // Pour debug
 			return (0);
 		}
 		i = i + 21;
