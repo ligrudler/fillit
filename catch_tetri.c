@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 14:41:19 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/09 17:16:17 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/09 18:10:36 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,37 @@ char	**get_tetri(char *str)
 		return (NULL);
 	if(!(tab = stock_tetri(nstr)))
 		return (NULL);
+	return (tab);
+}
+
+char	**new_position(char **tab)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while(tab[i]) // vérifier la position de i++
+	{
+		j = 0;
+		while (tab[i][0] != '#' && tab[i][4] != '#' && tab[i][8] != '#' && tab[i][12] != '#')
+		{
+			while (tab[i][j]) // Verifier a quel moment j++ est incrémenté dans le while
+			{
+				if (tab[i][j] == '#')
+					ft_swap(tab[i][j], tab[i][j - 1]);
+				j++;
+			}
+		}
+				while (tab[i][0] != '#' && tab[i][1] != '#' && tab[i][2] != '#' && tab[i][3] != '#')
+		{
+			while (tab[i][j]) // Verifier a quel moment j++ est incrémenté dans le while
+			{
+				if (tab[i][j] == '#')
+					ft_swap(tab[i][j], tab[i][j - 4]);
+				j++; 
+			}
+		}
+		i++;
+	}
 	return (tab);
 }
