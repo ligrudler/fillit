@@ -6,13 +6,13 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 16:13:49 by lgrudler          #+#    #+#             */
-/*   Updated: 2019/01/08 17:47:32 by lgrudler         ###   ########.fr       */
+/*   Updated: 2019/01/09 12:25:15 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int check_pattern(char *str)
+int 	check_pattern(char *str)
 {
 	int i;
 	int dot;
@@ -40,14 +40,37 @@ int check_pattern(char *str)
 	return (0);
 }
 
-int check_newline(char *str)
+int 	check_newline(char *str)
 {
+	int		newlines;
+	int		chars;
+	int		tetris;
+	int		lines;
+	int		i;
+
+	i = 0;
+	lines = 0;
+	chars = ft_strlen(str) + 1; // On calcule le nombre de chars afin de connaitre le nombre de tetriminos potentiels.
+	tetris = chars / 21; // Le nombre de tetriminos est égal au nombre de chars / 21/
+	while (str[i]) // On calcule le nombre de newlines présents dans le fichier.
+	{
+		if(str[i] == '\n')
+			lines++;
+		i++;
+	}
+	if (lines != ((tetris * 5) - 1)) // Si le nombre de newlines est égal au nombre (tetris * 5) -1, alors on continue, sinon, on arrete le programme.
+	{
+		printf("chars = " "%d\n", chars);   // debug
+		printf("tetris = " "%d\n", tetris); // debug
+		printf("lines = " "%d\n", lines);  // debug
+		return (0);
+	}
 	if (str[4] == '\n' && str[9] == '\n' && str[14] == '\n' && str[19] == '\n' && ((str[20] == '\n' && str[21] != '\0') || str[20] == '\0'))
 		return (1);
 	return (0);
 }
 
-int check_contact(char *str)
+int 	check_contact(char *str)
 {
 	int i;
 	int contact;
@@ -74,7 +97,7 @@ int check_contact(char *str)
 	return (0);
 }
 
-int check_file(char *str)
+int 	check_file(char *str)
 {
 	int i;
 	int len;
