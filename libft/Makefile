@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: elindao- <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/14 07:56:38 by elindao-          #+#    #+#              #
-#    Updated: 2019/01/06 22:34:53 by elindao-         ###   ########.fr        #
+#    Updated: 2019/01/09 18:33:11 by elindao-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,8 @@ SRCS = ft_atoi.c \
 	   ft_tolower.c \
 	   ft_toupper.c \
 	   ft_strjoinfree.c \
-	   ft_strsubfree.c
+	   ft_strsubfree.c \
+	   ft_swap.c \
 
 OBJS = $(SRCS:.c=.o)
 

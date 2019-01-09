@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elindao- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 08:41:09 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/06 22:34:01 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/09 18:34:42 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ int						ft_power(int nb, int power);
 int						ft_isprime(int nb);
 char					*ft_strsubfree(char *s, unsigned int start, size_t len);
 char					*ft_strjoinfree(char *s1, char *s2);
+void					ft_swap(int	*a, int *b);
 
 #endif

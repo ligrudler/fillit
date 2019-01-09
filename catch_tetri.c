@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 14:41:19 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/09 18:10:36 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/09 19:07:09 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char	**get_tetri(char *str)
 	return (tab);
 }
 
-char	**new_position(char **tab)
+/*char	**new_position(char **tab)
 {
 	int		i;
 	int		j;
@@ -118,4 +118,4 @@ char	**new_position(char **tab)
 		i++;
 	}
 	return (tab);
-}
+}*/
