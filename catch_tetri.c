@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 14:41:19 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/09 19:07:09 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/10 15:47:32 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,46 +76,55 @@ char **stock_tetri(char *nstr)
 	return (tab);
 }
 
-char	**get_tetri(char *str)
+char **new_position(char **tab)
 {
-	char	**tab;
-	char	*nstr;
-
-	if (! (nstr = erase_newline(str)))
-		return (NULL);
-	if(!(tab = stock_tetri(nstr)))
-		return (NULL);
-	return (tab);
-}
-
-/*char	**new_position(char **tab)
-{
-	int		i;
-	int		j;
+	int i;
+	int j;
+	int spe;
+	int position;
 
 	i = 0;
-	while(tab[i]) // vérifier la position de i++
+	while (tab[i])
 	{
 		j = 0;
-		while (tab[i][0] != '#' && tab[i][4] != '#' && tab[i][8] != '#' && tab[i][12] != '#')
+		spe = check_special_pattern(tab[i]);
+		position = 0;
+		while (tab[i][j] != '#' && tab[i][j])
 		{
-			while (tab[i][j]) // Verifier a quel moment j++ est incrémenté dans le while
-			{
-				if (tab[i][j] == '#')
-					ft_swap(tab[i][j], tab[i][j - 1]);
-				j++;
-			}
+			position++;
+			j++;
 		}
-				while (tab[i][0] != '#' && tab[i][1] != '#' && tab[i][2] != '#' && tab[i][3] != '#')
+		while (tab[i][j])
 		{
-			while (tab[i][j]) // Verifier a quel moment j++ est incrémenté dans le while
+			if (tab[i][j] == '#')
 			{
-				if (tab[i][j] == '#')
-					ft_swap(tab[i][j], tab[i][j - 4]);
-				j++; 
+				tab[i][j] = '.';
+				tab[i][j - (position - spe)] = '#';
 			}
+			j++;
 		}
 		i++;
 	}
 	return (tab);
-}*/
+}
+
+char **get_tetri(char *str)
+{
+	char **tab;
+	char **ntab;
+	char *nstr;
+	int i; // debug
+
+	i = 0; // debug
+	if (!(nstr = erase_newline(str)))
+		return (NULL);
+	if (!(tab = stock_tetri(nstr)))
+		return (NULL);
+	ntab = new_position(tab);
+	while (tab[i]) // debug
+	{
+		printf("%s\n", ntab[i]);
+		i++;
+	}
+	return (ntab);
+}
