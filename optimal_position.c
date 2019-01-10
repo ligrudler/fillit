@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 15:07:55 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/10 15:50:54 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/10 16:34:29 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,36 @@ int		check_special_pattern(char *block)
 	if (block[i + 2] == '#' && block[i + 3] == '#' && block[i + 4] == '#')
 		return (2);
 	return (0);
+}
+
+char **new_position(char **tab)
+{
+	int i;
+	int j;
+	int spe;
+	int position;
+
+	i = 0;
+	while (tab[i])
+	{
+		j = 0;
+		spe = check_special_pattern(tab[i]);
+		position = 0;
+		while (tab[i][j] != '#' && tab[i][j])
+		{
+			position++;
+			j++;
+		}
+		while (tab[i][j])
+		{
+			if (tab[i][j] == '#')
+			{
+				tab[i][j] = '.';
+				tab[i][j - (position - spe)] = '#';
+			}
+			j++;
+		}
+		i++;
+	}
+	return (tab);
 }

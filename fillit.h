@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 17:23:03 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/10 15:29:39 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/10 17:25:10 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ int		check_newline(char *str);
 int		check_contact(char *str);
 int		check_file(char *str);
 char	*get_file(const char *file);
-int		count_tetri(char *str);
+int		count_tetri(char **tab);
 char	*erase_newline(char *str);
 char	**stock_tetri(char *nstr);
 char	**get_tetri(char *str);
 char	**new_position(char **tab);
 int		check_special_pattern(char *block);
+int		min_grid_size(int tetri);
+char	*get_min_map(char **tab);
 
 
 #endif
