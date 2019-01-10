@@ -6,7 +6,7 @@
 #    By: lgrudler <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/10 19:51:21 by lgrudler          #+#    #+#              #
-#    Updated: 2019/01/10 20:33:15 by lgrudler         ###   ########.fr        #
+#    Updated: 2019/01/10 20:47:42 by lgrudler         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,6 @@ SRC = catch_tetri.c \
 	  optimal_position.c \
 
 HDR = ./fillit.h
-
-LIB = -L./libft/ -lft
 
 OBJET = $(SRC:.c=.o)
 
