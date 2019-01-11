@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 15:07:55 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/10 20:36:39 by lgrudler         ###   ########.fr       */
+/*   Updated: 2019/01/11 16:06:30 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ char **new_position(char **tab)
 	int j;
 	int spe;
 	int position;
+	int letter;
 
 	i = 0;
+	letter = 'A';
 	while (tab[i])
 	{
 		j = 0;
@@ -57,11 +59,12 @@ char **new_position(char **tab)
 			if (tab[i][j] == '#')
 			{
 				tab[i][j] = '.';
-				tab[i][j - (position - spe)] = '#';
+				tab[i][j - (position - spe)] = letter;
 			}
 			j++;
 		}
 		i++;
+		letter++;
 	}
 	return (tab);
 }
