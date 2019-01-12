@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 16:39:05 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/10 17:45:40 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/12 17:35:45 by lgrudler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,33 +32,28 @@ int		min_grid_size(int tetri)
 	return (a);
 }
 
-char	*get_min_map(char **tab)
+char	**get_map(int size)
 {
-	int		tetri;
-	int		size;
-	char	*min_map;
-	int		i; // debug
+	int		i;
+	int		j;
+	char	**map;
 
-	i = 0; // debug
-	tetri = count_tetri(tab);
-	size = min_grid_size(tetri);
-//	printf("Tetri = %d\n", tetri);
-//	printf("Size = %d\n", size);
-	if(!(min_map = (char*)malloc(sizeof(char) * (size * size))))
+	i = 0;
+	j = 0;
+	if (!(map = (char**)malloc(sizeof(char*) * size)))
 		return (NULL);
-//	printf("nombre de caractere =  %d\n", size * size + size + 1);
-	while(i < size * size + size)
+	while(i < size)
 	{
-		min_map[i] = '.';
+		j = 0;
+		if (!(map[i] = (char*)malloc(sizeof(char) * size)))
+			return (NULL);
+		while (j < size)
+		{
+			map[i][j] = '.';
+			j++;
+		}
+		map[i][size] = '\0';
 		i++;
 	}
-	i = 0;
-	while (i < size * size + size)
-	{
-		min_map[i + size] = '\n';
-		i = i + size + 1;
-	}
-	min_map[i] = '\0';
-//	printf("%s\n", min_map);
-	return (min_map);
+	return (map);
 }
