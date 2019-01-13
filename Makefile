@@ -6,7 +6,7 @@
 #    By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/10 19:51:21 by lgrudler          #+#    #+#              #
-#    Updated: 2019/01/13 14:53:55 by elindao-         ###   ########.fr        #
+#    Updated: 2019/01/13 17:19:15 by elindao-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ SRC = get_tetri.c \
 	  get_map.c \
 	  main.c \
 	  get_optimal_position.c \
+	  backtrack_functions.c \
+	  backtrack_solver.c \
 
 HDR = ./fillit.h
 

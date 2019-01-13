@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 17:23:03 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 17:10:57 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 17:56:34 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,8 @@ int		print_map(char **map);
 void	free_map(char **map);
 int		check_placement(char **map, char *block, int size, t_pos *pos);
 void	put_block(char **map, char *block, int size, t_pos *pos);
+void	erase_block(char **map, char *block, int size, t_pos *pos);
+int		backtrack_solver(char **map, char **tab, int size, int i);
+void	print_result(char **tab, int size);
 
 #endif

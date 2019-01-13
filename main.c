@@ -6,17 +6,33 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 19:44:40 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 14:45:12 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 18:46:59 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
+void	print_result(char **tab, int size)
+{
+	int		i;
+	char	**map;
+
+	i = 0;
+	map = get_map(size);
+	while (backtrack_solver(map, tab, size, i) == 0)
+	{
+		size++;
+		free_map(map);
+		get_map(size);
+	}
+	print_map(map);
+	free_map(map);
+}
+
 int		main(int ac, char **av)
 {
 		char	*buf;
 		char	**tab;
-		char	**map;
 		int		size; //
 
 	if (ac != 2)
@@ -25,20 +41,13 @@ int		main(int ac, char **av)
 		return (0);
 	}
 	if (! (buf = get_file(av[1])))
+	{
+		ft_putendl("error");
 		return (0);
+	}
 	if (!(tab = get_tetri(buf)))
 		return (0);
 	size = min_map_size(tab);
-	if (!(map = get_map(size)))
-		return (0);
-	printf ("size = %d\n", size);
-	print_map(map);
-	/*if (!buf)
-	{
-		ft_putendl("Mauvais Fichier !");
-		return (0);
-	}
-	ft_putendl("Bon Fichier !");
-	ft_strdel(&buf);*/
+	print_result(tab, size);
 	return (0);
 }
