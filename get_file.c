@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 14:59:27 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 14:59:33 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 19:56:20 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,35 +42,6 @@ int check_pattern(char *str)
 
 int check_newline(char *str)
 {
-	/*int newlines;
-	int chars;
-	int tetris;
-	int lines;
-	int i;
-
-	i = 0;
-	lines = 0;
-	chars = ft_strlen(str) + 1; // On calcule le nombre de chars afin de connaitre le nombre de tetriminos potentiels.
-	tetris = chars / 21;		// Le nombre de tetriminos est égal au nombre de chars / 21/
-	while (str[i])				// On calcule le nombre de newlines présents dans le fichier.
-	{
-		if (str[i] == '\n')
-			lines++;
-		i++;
-	}
-	if (lines != ((tetris * 5) - 1)) // Si le nombre de newlines est égal au nombre (tetris * 5) -1, alors on continue, sinon, on arrete le programme.
-	{
-		printf("chars = "
-			   "%d\n",
-			   chars); // debug
-		printf("tetris = "
-			   "%d\n",
-			   tetris); // debug
-		printf("lines = "
-			   "%d\n",
-			   lines); // debug
-		return (0);
-	}*/
 	if (str[4] == '\n' && str[9] == '\n' && str[14] == '\n' && str[19] == '\n' && ((str[20] == '\n' && str[21] != '\0') || str[20] == '\0'))
 		return (1);
 	return (0);
@@ -111,27 +82,15 @@ int check_file(char *str)
 	i = 0;
 	len = ft_strlen(str);
 	if (len > 547)
-	{
-		ft_putendl("Fichier trop grand ! (Trop de pièces?)"); // debug
 		return (0);
-	}
 	while (i < len)
 	{
 		if (!check_pattern(str + i))
-		{
-			ft_putendl("Erreur à check_pattern"); // pour debug
 			return (0);
-		}
 		if (!check_contact(str + i))
-		{
-			ft_putendl("Erreur à check_contact"); // pour debug
 			return (0);
-		}
 		if (!check_newline(str + i))
-		{
-			ft_putendl("Erreur à check_newline"); // Pour debug
 			return (0);
-		}
 		i = i + 21;
 	}
 	return (1);

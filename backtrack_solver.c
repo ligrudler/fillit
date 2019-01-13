@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 17:18:01 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 19:39:49 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 19:54:26 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		backtrack_solver(char **map, char **tab, int size, int i)
 {
 	t_pos		pos;
 
-	if (tab[i] == NULL)   // i + 1 ?
+	if (tab[i] == NULL)
 		return (1);
 	pos.y = 0;
 	while (pos.y < size)
