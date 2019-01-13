@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 17:23:03 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 14:31:37 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 17:10:57 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ int		min_map_size(char **tab);
 char	**get_map(int size);
 int		print_map(char **map);
 void	free_map(char **map);
+int		check_placement(char **map, char *block, int size, t_pos *pos);
+void	put_block(char **map, char *block, int size, t_pos *pos);
 
 #endif
