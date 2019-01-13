@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 17:23:03 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/12 16:58:47 by lgrudler         ###   ########.fr       */
+/*   Updated: 2019/01/13 13:33:36 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ char	**stock_tetri(char *nstr);
 char	**get_tetri(char *str);
 char	**new_position(char **tab);
 int		check_special_pattern(char *block);
-int		min_grid_size(int tetri);
+int		min_map_size(char **tab);
 char	**get_map(int size);
-
+int		print_map(char **map);
 
 #endif

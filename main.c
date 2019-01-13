@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 19:44:40 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/10 20:33:00 by lgrudler         ###   ########.fr       */
+/*   Updated: 2019/01/13 14:23:20 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ int		main(int ac, char **av)
 {
 		char	*buf;
 		char	**tab;
-		char	*min_map; //
+		char	**map;
+		int		size; //
 
 	if (ac != 2)
 	{
@@ -49,7 +50,11 @@ int		main(int ac, char **av)
 		return (0);
 	if (!(tab = get_tetri(buf)))
 		return (0);
-	min_map = get_min_map(tab);
+	size = min_map_size(tab);
+	if (!(map = get_map(size)))
+		return (0);
+	printf ("size = %d\n", size);
+	print_map(map);
 	/*if (!buf)
 	{
 		ft_putendl("Mauvais Fichier !");

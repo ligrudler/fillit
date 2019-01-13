@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 14:41:19 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/11 16:07:22 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 12:57:25 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,18 +71,18 @@ char **get_tetri(char *str)
 	char **tab;
 	char **ntab;
 	char *nstr;
-	int i; // debug
+//	int i; // debug
 
-	i = 0; // debug
+//	i = 0; // debug
 	if (!(nstr = erase_newline(str)))
 		return (NULL);
 	if (!(tab = stock_tetri(nstr)))
 		return (NULL);
 	ntab = new_position(tab);
-	while (tab[i]) // debug
-	{
-		printf("%s\n", ntab[i]);
-		i++;
-	}
+//	while (tab[i]) // debug
+//	{
+//		printf("%s\n", ntab[i]);
+//		i++;
+//	}
 	return (ntab);
 }
