@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 17:18:01 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 18:54:09 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 19:39:49 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		backtrack_solver(char **map, char **tab, int size, int i)
 {
 	t_pos		pos;
 
-	if (tab[i + 1] == NULL)   // i + 1 ?
+	if (tab[i] == NULL)   // i + 1 ?
 		return (1);
 	pos.y = 0;
 	while (pos.y < size)
@@ -24,10 +24,10 @@ int		backtrack_solver(char **map, char **tab, int size, int i)
 		pos.x = 0;
 		while (pos.x < size)
 		{
-			if(check_placement(map, tab[i], size, &pos) == 1)
+			if(check_placement(map, tab[i], size, &pos))
 				{
 					put_block(map, tab[i], size, &pos);
-					if(backtrack_solver(map, tab, size, (i + 1) == 1))
+					if(backtrack_solver(map, tab, size, (i + 1) ))
 						return (1);
 					else
 						erase_block(map, tab[i], size, &pos);

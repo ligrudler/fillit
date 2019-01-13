@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 19:44:40 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 18:46:59 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 19:23:11 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_result(char **tab, int size)
 	{
 		size++;
 		free_map(map);
-		get_map(size);
+		map = get_map(size);
 	}
 	print_map(map);
 	free_map(map);
