@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 17:23:03 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 13:33:36 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 14:31:37 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int		check_special_pattern(char *block);
 int		min_map_size(char **tab);
 char	**get_map(int size);
 int		print_map(char **map);
+void	free_map(char **map);
 
 #endif

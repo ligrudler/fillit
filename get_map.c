@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 16:39:05 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 13:53:34 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 14:36:30 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,18 @@ int		min_map_size(char **tab)
 	while ((a * a) < (tetri * 4))
 		a++;
 	return (a);
+}
+
+void	free_map(char **map)
+{
+	int i;
+
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
 }
 
 char	**get_map(int size)
