@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   catch_tetri.c                                      :+:      :+:    :+:   */
+/*   get_tetri.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 14:41:19 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 14:39:30 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 14:52:34 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,6 @@ char **get_tetri(char *str)
 		return (NULL);
 	//free(nstr); Ca marche pas... Pourtant faudrait le free vu qu on l utilise plus nan ?
 	ntab = new_position(tab);
+	free_map(tab); // ATTENTION: ne change rien avec valgrind. On supprime de la mémoire le tab qu'on utilisera plus.
 	return (ntab);
 }
