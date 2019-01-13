@@ -6,13 +6,13 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 14:59:27 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 19:56:20 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 22:51:45 by lgrudler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int check_pattern(char *str)
+int		check_pattern(char *str)
 {
 	int i;
 	int dot;
@@ -40,14 +40,15 @@ int check_pattern(char *str)
 	return (0);
 }
 
-int check_newline(char *str)
+int		check_newline(char *str)
 {
-	if (str[4] == '\n' && str[9] == '\n' && str[14] == '\n' && str[19] == '\n' && ((str[20] == '\n' && str[21] != '\0') || str[20] == '\0'))
+	if (str[4] == '\n' && str[9] == '\n' && str[14] == '\n' && str[19] == '\n'
+			&& ((str[20] == '\n' && str[21] != '\0') || str[20] == '\0'))
 		return (1);
 	return (0);
 }
 
-int check_contact(char *str)
+int		check_contact(char *str)
 {
 	int i;
 	int contact;
@@ -74,7 +75,7 @@ int check_contact(char *str)
 	return (0);
 }
 
-int check_file(char *str)
+int		check_file(char *str)
 {
 	int i;
 	int len;
@@ -96,12 +97,12 @@ int check_file(char *str)
 	return (1);
 }
 
-char *get_file(const char *file)
+char	*get_file(const char *file)
 {
-	int fd;
-	char buf[547];
-	int ret;
-	char *str;
+	int		fd;
+	char	buf[547];
+	int		ret;
+	char	*str;
 
 	if ((fd = open(file, O_RDONLY)) < 0)
 		return (NULL);

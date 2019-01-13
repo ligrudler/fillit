@@ -6,13 +6,13 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 16:22:27 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 19:32:07 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 20:34:17 by lgrudler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		check_placement(char **map, char *block, int size, t_pos *pos) //
+int		check_placement(char **map, char *block, int size, t_pos *pos)
 {
 	int		line;
 	int		col;
@@ -25,10 +25,10 @@ int		check_placement(char **map, char *block, int size, t_pos *pos) //
 		col = 0;
 		while (col < 4 && col + pos->x < size)
 		{
-			if((ft_isupper(map[line + pos->y][col + pos ->x]))
-				&& ft_isupper(block[line * 4 + col]) != 0)
+			if ((ft_isupper(map[line + pos->y][col + pos->x]))
+					&& ft_isupper(block[line * 4 + col]) != 0)
 				return (0);
-			if(ft_isupper(block[line * 4 + col]) != 0)
+			if (ft_isupper(block[line * 4 + col]) != 0)
 				verif++;
 			col++;
 		}
@@ -50,7 +50,7 @@ void	put_block(char **map, char *block, int size, t_pos *pos)
 		col = 0;
 		while (col < 4 && col + pos->x < size)
 		{
-			if(ft_isupper(block[line * 4 + col]) == 1)
+			if (ft_isupper(block[line * 4 + col]) == 1)
 				map[pos->y + line][pos->x + col] = block[line * 4 + col];
 			col++;
 		}
@@ -69,7 +69,7 @@ void	erase_block(char **map, char *block, int size, t_pos *pos)
 		col = 0;
 		while (col < 4 && col + pos->x < size)
 		{
-			if(ft_isupper(block[line * 4 + col]) == 1)
+			if (ft_isupper(block[line * 4 + col]) == 1)
 				map[pos->y + line][pos->x + col] = '.';
 			col++;
 		}

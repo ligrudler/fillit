@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 19:44:40 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 19:23:11 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 22:15:07 by lgrudler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,22 @@ void	print_result(char **tab, int size)
 		map = get_map(size);
 	}
 	print_map(map);
-	free_map(map);
+	free(map); // pourquoi juste free(map) diminue les leeks alors aue free_map les augmente ?
+//free_map(map);
 }
 
 int		main(int ac, char **av)
 {
 		char	*buf;
 		char	**tab;
-		int		size; //
+		int		size;
 
 	if (ac != 2)
 	{
 		ft_putendl("Usage: .fillit mon_fichier");
 		return (0);
 	}
-	if (! (buf = get_file(av[1])))
+	if (!(buf = get_file(av[1])))
 	{
 		ft_putendl("error");
 		return (0);
@@ -49,5 +50,6 @@ int		main(int ac, char **av)
 		return (0);
 	size = min_map_size(tab);
 	print_result(tab, size);
+	free_map(tab);
 	return (0);
 }

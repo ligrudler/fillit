@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 14:41:19 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 19:11:24 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/13 22:51:41 by lgrudler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ char **get_tetri(char *str)
 		return (NULL);
 	if (!(tab = stock_tetri(nstr)))
 		return (NULL);
-	//free(nstr); Ca marche pas... Pourtant faudrait le free vu qu on l utilise plus nan ?
+//	free(nstr); //Ca marche pas... Pourtant faudrait le free vu qu on l utilise plus nan ?
 	ntab = new_position(tab);
 //	free_map(tab); // ATTENTION: ne change rien avec valgrind. On supprime de la mémoire le tab qu'on utilisera plus.
 	return (ntab);
