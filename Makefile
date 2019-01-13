@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lgrudler <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/10 19:51:21 by lgrudler          #+#    #+#              #
-#    Updated: 2019/01/11 14:20:38 by lgrudler         ###   ########.fr        #
+#    Updated: 2019/01/13 14:42:16 by elindao-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ NAME = fillit
 
 FLAGS = -Wall -Werror -Wextra
 
-SRC = catch_tetri.c \
-	  ft_check.c \
+SRC = get_tetri.c \
+	  get_file.c \
 	  get_map.c \
 	  main.c \
 	  optimal_position.c \
