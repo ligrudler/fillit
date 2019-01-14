@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 17:23:03 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/14 14:20:21 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/14 16:36:12 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FILLIT_H
 
 # include "libft/libft.h"
-# include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
 
