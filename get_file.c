@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 14:59:27 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 22:51:45 by lgrudler         ###   ########.fr       */
+/*   Updated: 2019/01/14 10:36:19 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int		check_file(char *str)
 
 	i = 0;
 	len = ft_strlen(str);
-	if (len > 547)
+	if (len > 547 || len <= 0)
 		return (0);
 	while (i < len)
 	{
