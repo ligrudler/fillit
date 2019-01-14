@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 15:07:55 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/14 10:56:10 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/14 15:34:31 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,34 +36,27 @@ int		check_special_pattern(char *block)
 
 char	**new_position(char **tab)
 {
-	int i;
-	int j;
-	int spe;
-	int position;
-	int letter;
+	t_pos	pos;
+	int		spe;
+	int		position;
+	int		letter;
 
-	i = 0;
+	pos.y = 0;
 	letter = 'A';
-	while (tab[i])
+	while (tab[pos.y])
 	{
-		j = 0;
-		spe = check_special_pattern(tab[i]);
+		pos.x = 0;
+		spe = check_special_pattern(tab[pos.y]);
 		position = 0;
-		while (tab[i][j] != '#' && tab[i][j])
-		{
+		while (tab[pos.y][pos.x] != '#' && tab[pos.y][pos.x++])
 			position++;
-			j++;
-		}
-		while (tab[i][j])
+		while (tab[pos.y][pos.x])
 		{
-			if (tab[i][j] == '#')
-			{
-				tab[i][j] = '.';
-				tab[i][j - (position - spe)] = letter;
-			}
-			j++;
+			if (tab[pos.y][pos.x] == '#' && (tab[pos.y][pos.x] = '.'))
+				tab[pos.y][pos.x - (position - spe)] = letter;
+			pos.x++;
 		}
-		i++;
+		pos.y++;
 		letter++;
 	}
 	return (tab);

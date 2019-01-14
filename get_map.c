@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 16:39:05 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/14 11:37:23 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/14 15:56:53 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	free_map(char **map)
 		free(map[i]);
 		i++;
 	}
+	free(map);
 }
 
 char	**get_map(int size)
@@ -59,12 +60,12 @@ char	**get_map(int size)
 
 	i = 0;
 	j = 0;
-	if (!(map = (char**)malloc(sizeof(char*) * size + 1)))
+	if (!(map = (char**)malloc(sizeof(char*) * (size + 1))))
 		return (NULL);
 	while (i < size)
 	{
 		j = 0;
-		if (!(map[i] = (char*)malloc(sizeof(char) * size)))
+		if (!(map[i] = (char*)malloc(sizeof(char) * (size + 1))))
 			return (NULL);
 		while (j < size)
 		{
