@@ -6,18 +6,18 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 14:41:19 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 22:51:41 by lgrudler         ###   ########.fr       */
+/*   Updated: 2019/01/14 11:33:28 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char *erase_newline(char *str)
+char	*erase_newline(char *str)
 {
-	int i;
-	int j;
-	int tetri;
-	char *nstr;
+	int		i;
+	int		j;
+	int		tetri;
+	char	*nstr;
 
 	i = 0;
 	j = 0;
@@ -38,13 +38,13 @@ char *erase_newline(char *str)
 	return (nstr);
 }
 
-char **stock_tetri(char *nstr)
+char	**stock_tetri(char *nstr)
 {
-	int i;
-	int j;
-	int k;
-	int tetri;
-	char **tab;
+	int		i;
+	int		j;
+	int		k;
+	int		tetri;
+	char	**tab;
 
 	i = 0;
 	k = 0;
@@ -66,18 +66,16 @@ char **stock_tetri(char *nstr)
 	return (tab);
 }
 
-char **get_tetri(char *str)
+char	**get_tetri(char *str)
 {
-	char **tab;
-	char **ntab;
-	char *nstr;
+	char	**tab;
+	char	**ntab;
+	char	*nstr;
 
 	if (!(nstr = erase_newline(str)))
 		return (NULL);
 	if (!(tab = stock_tetri(nstr)))
 		return (NULL);
-//	free(nstr); //Ca marche pas... Pourtant faudrait le free vu qu on l utilise plus nan ?
 	ntab = new_position(tab);
-//	free_map(tab); // ATTENTION: ne change rien avec valgrind. On supprime de la mémoire le tab qu'on utilisera plus.
 	return (ntab);
 }

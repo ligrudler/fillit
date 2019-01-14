@@ -6,13 +6,13 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/09 18:24:27 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/09 18:34:45 by elindao-         ###   ########.fr       */
+/*   Updated: 2019/01/14 11:01:11 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_swap(int	*a, int *b)
+void	ft_swap(int *a, int *b)
 {
 	int tmp;
 

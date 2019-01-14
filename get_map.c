@@ -6,21 +6,11 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 16:39:05 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 22:04:22 by lgrudler         ###   ########.fr       */
+/*   Updated: 2019/01/14 11:37:23 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-int		count_tetri(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i])
-		i++;
-	return (i);
-}
 
 int		print_map(char **map)
 {

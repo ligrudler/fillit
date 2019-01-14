@@ -6,7 +6,7 @@
 /*   By: elindao- <elindao-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 17:23:03 by elindao-          #+#    #+#             */
-/*   Updated: 2019/01/13 20:38:20 by lgrudler         ###   ########.fr       */
+/*   Updated: 2019/01/14 11:20:36 by elindao-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,11 @@ typedef struct		s_pos
 	int y;
 }					t_pos;
 
-int					check_pattern(char *str);
+int					c99heck_pattern(char *str);
 int					check_newline(char *str);
 int					check_contact(char *str);
 int					check_file(char *str);
 char				*get_file(const char *file);
-int					count_tetri(char **tab);
 char				*erase_newline(char *str);
 char				**stock_tetri(char *nstr);
 char				**get_tetri(char *str);
@@ -42,7 +41,7 @@ char				**get_map(int size);
 int					print_map(char **map);
 void				free_map(char **map);
 int					check_placement(char **map, char *block,
-		int size, t_pos *pos);
+int size, t_pos *pos);
 void				put_block(char **map, char *block, int size, t_pos *pos);
 void				erase_block(char **map, char *block, int size, t_pos *pos);
 int					backtrack_solver(char **map, char **tab, int size, int i);
