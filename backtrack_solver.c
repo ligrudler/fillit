@@ -38,3 +38,4 @@ int		backtrack_solver(char **map, char **tab, int size, int i)
 	}
 	return (0);
 }
+

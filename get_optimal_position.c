@@ -67,3 +67,4 @@ char	**new_position(char **tab)
 	}
 	return (tab);
 }
+
